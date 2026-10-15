@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benny Glory Travel &amp; Tour | Kumasi, Ghana</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#C9A84C; --gold-light:#E8C97A; --gold-dark:#8B6914;
+  --deep:#0B1320; --deep2:#121D2E; --deep3:#1A2840;
+  --cream:#F5EDD8; --cream2:#EDE0C4; --text:#C8B98A; --white:#FAFAF5;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--deep);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:0.22}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 5rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s;background:linear-gradient(to bottom,rgba(8,8,8,0.85),transparent)}
+nav.scrolled{background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,168,76,0.12);padding:1rem 5rem}
+.logo-wrap{text-decoration:none;display:flex;align-items:center;gap:0.9rem}
+.logo-emblem{width:46px;height:46px;border-radius:9px;object-fit:contain;flex-shrink:0;display:block}
+.logo-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--gold);line-height:1.1;letter-spacing:0.03em}
+.logo-sub{font-size:0.56rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--cream2);opacity:0.7}
+.nav-iata-badge{width:46px;height:46px;object-fit:contain;margin-left:0.7rem;flex-shrink:0;background:#fff;border-radius:6px;padding:3px}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--cream2);transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--gold);color:var(--deep);border:none;padding:0.65rem 1.7rem;font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Montserrat',sans-serif;white-space:nowrap}
+.nav-cta:hover{background:var(--gold-light);box-shadow:0 8px 24px rgba(201,168,76,0.3)}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;width:44px;height:44px;align-items:center;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all 0.3s}
+.hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-links.mobile-open{display:flex!important;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:min(78vw,320px);height:100vh;background:rgba(8,8,8,0.98);backdrop-filter:blur(16px);padding:6rem 2rem 2rem;gap:0;z-index:999;border-left:1px solid rgba(201,168,76,0.15);overflow-y:auto}
+.nav-links.mobile-open li{width:100%;border-bottom:1px solid rgba(201,168,76,0.1)}
+.nav-links.mobile-open a{display:block;padding:1.1rem 0;font-size:0.78rem}
+.nav-links.mobile-open .nav-cta-mobile{display:block;margin-top:1.6rem;width:100%;text-align:center}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:998}
+.nav-overlay.active{display:block}
+.nav-cta-mobile{display:none}
+
+/* ── HERO SLIDESHOW ── */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease,transform 8s ease;transform:scale(1.08)}
+.slide.active{opacity:1;transform:scale(1)}
+.s1{background-image:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1800')}
+.s2{background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1800')}
+.s3{background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1800')}
+.s4{background-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1800')} 
+.s5{background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1800')}
+.s6{background-image:url('img/beed.jpg')}
+.hero-slides-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,0.88) 0%,rgba(8,8,8,0.55) 55%,rgba(8,8,8,0.35) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;padding:0 5rem;max-width:680px}
+.slide-dots{position:absolute;bottom:2.5rem;right:5rem;z-index:3;display:flex;gap:0.6rem}
+.dot{width:24px;height:2px;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s}
+.dot.active{background:var(--gold);width:40px}
+.slide-counter{position:absolute;bottom:2.5rem;left:5rem;z-index:3;font-size:0.65rem;letter-spacing:0.3em;color:rgba(255,255,255,0.5)}
+.slide-dest{position:absolute;bottom:5rem;right:5rem;z-index:3;text-align:right}
+.slide-dest-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:700;opacity:0;transition:opacity 0.5s}
+.slide-dest-name.vis{opacity:1}
+.slide-dest-flag{font-size:1.4rem;display:block;margin-bottom:0.3rem;opacity:0;transition:opacity 0.5s 0.1s}
+.slide-dest-flag.vis{opacity:1}
+
+.hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem;animation:fadeUp 1s 0.1s both}
+.eyebrow-line{width:35px;height:1px;background:var(--gold)}
+.eyebrow-text{font-size:0.64rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.8rem);font-weight:900;color:var(--white);line-height:1.02;margin-bottom:1.2rem;animation:fadeUp 1s 0.2s both}
+.hero-h1 em{font-style:italic;color:var(--gold);display:block}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--cream2);letter-spacing:0.06em;margin-bottom:1.8rem;animation:fadeUp 1s 0.3s both}
+.hero-desc{font-size:0.85rem;line-height:1.95;color:var(--text);max-width:440px;margin-bottom:2.8rem;animation:fadeUp 1s 0.4s both}
+.hero-actions{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;animation:fadeUp 1s 0.5s both}
+.btn-gold{background:var(--gold);color:var(--deep);border:none;padding:1rem 2.4rem;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 35px rgba(201,168,76,0.35)}
+.btn-outline{background:transparent;color:var(--cream);border:1px solid rgba(201,168,76,0.35);padding:0.95rem 2rem;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-contact-strip{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.12);animation:fadeUp 1s 0.6s both;flex-wrap:wrap}
+.hc-item{display:flex;align-items:center;gap:0.7rem}
+.hc-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block}
+.hc-value{font-size:0.82rem;color:var(--cream);font-weight:500;text-decoration:none}
+.hc-value:hover{color:var(--gold)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── TICKER ── */
+.ticker{background:var(--gold);padding:0.8rem 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-block;animation:tick 32s linear infinite}
+.ticker-item{display:inline-block;font-size:0.65rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--deep);padding:0 2.5rem}
+.ticker-sep{display:inline-block;width:5px;height:5px;background:rgba(8,8,8,0.3);border-radius:50%;vertical-align:middle}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── GENERAL ── */
+section{padding:6rem 5rem}
+.sec-label{display:flex;align-items:center;gap:1rem;font-size:0.63rem;letter-spacing:0.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.sec-label::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,3.2rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:1.3rem}
+.sec-h2 em{font-style:italic;color:var(--gold)}
+.sec-p{font-size:0.88rem;line-height:1.95;color:var(--text);max-width:540px}
+
+/* ── WORLD DESTINATIONS ── */
+#world{background:var(--deep2)}
+.world-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+.world-tabs{display:flex;gap:0.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.wtab{background:transparent;border:1px solid rgba(201,168,76,0.2);color:var(--text);padding:0.5rem 1.3rem;font-size:0.67rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Montserrat',sans-serif}
+.wtab.active,.wtab:hover{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+.world-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.world-card{position:relative;overflow:hidden;cursor:pointer;height:280px}
+.world-card.wide{grid-column:span 2;height:300px}
+.world-card img{width:100%;height:100%;object-fit:cover;filter:brightness(0.55) saturate(0.8);transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s}
+.world-card:hover img{transform:scale(1.08);filter:brightness(0.75) saturate(1)}
+.world-card-info{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,transparent 100%)}
+.world-card-flag{font-size:1.4rem;display:block;margin-bottom:0.3rem}
+.world-card-info h3{font-family:'Playfair Display',serif;color:var(--white);font-size:1.1rem;font-weight:700;margin-bottom:0.1rem}
+.world-card.wide .world-card-info h3{font-size:1.5rem}
+.world-card-info p{font-size:0.65rem;letter-spacing:0.15em;color:var(--gold-light);text-transform:uppercase}
+.world-pill{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--deep);font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.28rem 0.75rem}
+.world-card-overlay{position:absolute;inset:0;background:rgba(201,168,76,0.0);transition:background 0.3s}
+.world-card:hover .world-card-overlay{background:rgba(201,168,76,0.06)}
+
+/* ── PHOTO STRIP (parallax-style) ── */
+.photo-strip{height:420px;position:relative;overflow:hidden;display:flex;gap:0}
+.ps-panel{flex:1;position:relative;overflow:hidden;transition:flex 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+.ps-panel:hover{flex:2.2}
+.ps-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.45) saturate(0.75);transition:filter 0.5s}
+.ps-panel:hover img{filter:brightness(0.7) saturate(1)}
+.ps-panel-label{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 100%);transform:translateY(5px);transition:transform 0.4s;text-align:center}
+.ps-panel:hover .ps-panel-label{transform:translateY(0)}
+.ps-panel-label .flag{font-size:1.5rem;display:block;margin-bottom:0.3rem}
+.ps-panel-label span{font-family:'Playfair Display',serif;color:var(--white);font-size:0.9rem;font-weight:700;display:block}
+.ps-panel-label small{font-size:0.62rem;letter-spacing:0.2em;color:var(--gold-light);text-transform:uppercase}
+.ps-strip-title{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;text-align:center;pointer-events:none}
+.ps-strip-title h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,0.8);white-space:nowrap}
+.ps-strip-title p{font-size:0.72rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-top:0.4rem}
+
+/* ── GHANA DESTINATIONS ── */
+#ghana{background:var(--deep)}
+.ghana-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
+.ghana-mosaic{display:grid;grid-template-columns:1.6fr 1fr 1fr;grid-template-rows:300px 220px;gap:6px}
+.dest-tile{position:relative;overflow:hidden;cursor:pointer}
+.dest-tile.tall{grid-row:span 2}
+.dest-tile img{width:100%;height:100%;object-fit:cover;filter:brightness(0.55) saturate(0.85);transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.5s}
+.dest-tile:hover img{transform:scale(1.07);filter:brightness(0.72) saturate(1)}
+.dest-tile-info{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.5rem;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,transparent 100%)}
+.dest-tile-info h3{font-family:'Playfair Display',serif;color:var(--white);font-size:1.25rem;font-weight:700;margin-bottom:0.15rem}
+.dest-tile.tall .dest-tile-info h3{font-size:1.85rem}
+.dest-tile-info p{font-size:0.68rem;letter-spacing:0.15em;color:var(--gold-light);text-transform:uppercase}
+.dest-pill{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--deep);font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.28rem 0.75rem}
+
+/* ── SERVICES ── */
+#services{background:var(--deep2)}
+.svc-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start}
+.svc-left{position:sticky;top:8rem}
+.open-hours{background:var(--deep3);padding:1.5rem;border-left:2px solid var(--gold);margin-top:2rem}
+.oh-title{font-size:0.63rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.oh-row{display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text);padding:0.3rem 0}
+.oh-row.today{color:var(--cream);font-weight:500}
+.oh-open{color:#5fc87a;font-size:0.72rem;font-weight:600;margin-top:0.5rem}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.08)}
+.svc-card{background:var(--deep2);padding:2.2rem;position:relative;overflow:hidden;transition:background 0.3s;cursor:default}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--gold);transition:width 0.45s}
+.svc-card:hover{background:var(--deep3)}
+.svc-card:hover::after{width:100%}
+.svc-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(201,168,76,0.07);position:absolute;top:1rem;right:1.5rem;line-height:1;pointer-events:none}
+.svc-icon{font-size:1.6rem;margin-bottom:1rem;display:block}
+.svc-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.6rem}
+.svc-card p{font-size:0.8rem;line-height:1.75;color:var(--text)}
+
+/* ── STATS ── */
+.stats-strip{background:var(--gold);padding:3.2rem 5rem;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--deep);display:block;line-height:1;margin-bottom:0.4rem}
+.stat-l{font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(8,8,8,0.6);font-weight:600}
+
+/* ── PACKAGES ── */
+#packages{background:var(--deep3)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.pkg-card{background:var(--deep2);position:relative;overflow:hidden;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s}
+.pkg-card:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(0,0,0,0.55)}
+.pkg-card.hot{border:1px solid var(--gold)}
+.pkg-img{height:230px;background-size:cover;background-position:center;filter:brightness(0.65);transition:filter 0.4s}
+.pkg-card:hover .pkg-img{filter:brightness(0.82)}
+.pkg-hot-badge{position:absolute;top:1.1rem;left:1.1rem;background:var(--gold);color:var(--deep);font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.28rem 0.85rem}
+.pkg-body{padding:1.8rem}
+.pkg-dur{font-size:0.63rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.pkg-body h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:0.6rem}
+.pkg-body p{font-size:0.8rem;line-height:1.75;color:var(--text);margin-bottom:1.3rem}
+.pkg-features{list-style:none;margin-bottom:1.5rem}
+.pkg-features li{font-size:0.76rem;color:var(--text);padding:0.25rem 0;display:flex;gap:0.6rem;align-items:flex-start}
+.pkg-features li::before{content:'✦';color:var(--gold);font-size:0.48rem;margin-top:4px;flex-shrink:0}
+.pkg-price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);margin-bottom:1.3rem}
+.pkg-price small{font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:400;color:var(--text);display:block;margin-bottom:0.2rem}
+.pkg-cta{display:block;width:100%;padding:0.8rem;text-align:center;background:transparent;border:1px solid rgba(201,168,76,0.28);color:var(--cream);font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Montserrat',sans-serif;text-decoration:none}
+.pkg-cta:hover,.pkg-card.hot .pkg-cta{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+
+/* ── AIRLINE PARTNERS ── */
+.airlines-bar{background:var(--deep2);padding:3rem 5rem;text-align:center}
+.airlines-bar .sec-label{justify-content:center}
+.airlines-bar .sec-label::before{display:none}
+.airlines-logos{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;margin-top:2rem}
+.airline-logo{display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.45;transition:opacity 0.3s;cursor:default}
+.airline-logo:hover{opacity:0.85}
+.airline-logo .aicon{font-size:2rem}
+.airline-logo span{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--cream2);font-weight:600}
+
+/* ── WHY US ── */
+#why{background:var(--deep);position:relative;overflow:hidden}
+#why::before{content:'GLORY';position:absolute;right:-3rem;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:20rem;font-weight:900;color:rgba(201,168,76,0.025);pointer-events:none;white-space:nowrap;line-height:1}
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.why-list{list-style:none;margin-top:2.5rem}
+.why-row{display:flex;gap:1.5rem;align-items:flex-start;padding:1.4rem 0;border-bottom:1px solid rgba(201,168,76,0.08)}
+.why-row:last-child{border-bottom:none}
+.why-n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:rgba(201,168,76,0.18);line-height:1;min-width:36px}
+.why-row h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.35rem}
+.why-row p{font-size:0.8rem;line-height:1.75;color:var(--text)}
+.why-visual{position:relative;height:580px}
+.wv-main{position:absolute;top:0;left:0;width:76%;height:74%;background:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=900') center/cover no-repeat;filter:brightness(0.65) saturate(0.85)}
+.wv-sec{position:absolute;bottom:0;right:0;width:56%;height:50%;background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700') center/cover no-repeat;filter:brightness(0.65) saturate(0.85);border:5px solid var(--deep)}
+.wv-badge{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);background:var(--gold);color:var(--deep);width:115px;height:115px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:2}
+.wv-badge strong{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;line-height:1}
+.wv-badge span{font-size:0.52rem;letter-spacing:0.13em;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:700;margin-top:0.25rem}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--deep2)}
+.testi-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.testi-card{background:var(--deep3);padding:2.2rem;border-top:2px solid var(--gold)}
+.testi-q{font-size:3.5rem;font-family:'Playfair Display',serif;color:rgba(201,168,76,0.12);line-height:0.5;margin-bottom:1.3rem}
+.testi-stars{color:var(--gold);font-size:0.75rem;margin-bottom:1rem}
+.testi-card blockquote{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;line-height:1.72;color:var(--cream2);margin-bottom:1.5rem}
+.testi-author{display:flex;align-items:center;gap:0.9rem}
+.testi-av{width:42px;height:42px;border-radius:50%;background:var(--gold-dark);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--gold-light);font-size:1rem;flex-shrink:0}
+.testi-name{font-size:0.8rem;font-weight:600;color:var(--white)}
+.testi-loc{font-size:0.68rem;color:var(--text)}
+
+/* ── CTA ── */
+.cta-banner{position:relative;padding:7rem 5rem;text-align:center;overflow:hidden}
+.cta-bg-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1600') center/cover no-repeat;filter:brightness(0.18) saturate(0.5)}
+.cta-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(8,8,8,0.45) 0%,rgba(8,8,8,0.9) 100%)}
+.cta-content{position:relative;z-index:2}
+.cta-content .sec-label{justify-content:center}
+.cta-content .sec-label::before{display:none}
+.cta-h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:1.3rem}
+.cta-h2 em{font-style:italic;color:var(--gold)}
+.cta-p{font-size:0.88rem;line-height:1.85;color:var(--text);max-width:500px;margin:0 auto 2.5rem}
+.cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+
+/* ── CONTACT ── */
+#contact{background:var(--deep)}
+.contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start}
+.cib-detail{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid rgba(201,168,76,0.08)}
+.cib-detail:last-child{border-bottom:none}
+.cib-icon{width:40px;height:40px;border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.cib-detail h4{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:0.35rem}
+.cib-detail p,.cib-detail a{font-size:0.86rem;color:var(--cream2);text-decoration:none;line-height:1.6}
+.cib-detail a:hover{color:var(--gold)}
+.wa-btn{display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.7rem 1.4rem;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:'Montserrat',sans-serif;margin-top:1.5rem;transition:all 0.3s;border:none;cursor:pointer}
+.wa-btn:hover{background:#1ebe5b;box-shadow:0 6px 20px rgba(37,211,102,0.35)}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:0.95rem}
+.fg{display:flex;flex-direction:column;gap:0.45rem}
+.fg.full{grid-column:span 2}
+.fg label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold)}
+.fg input,.fg select,.fg textarea{background:var(--deep2);border:1px solid rgba(201,168,76,0.13);color:var(--cream);padding:0.85rem 1.1rem;font-family:'Montserrat',sans-serif;font-size:0.83rem;outline:none;transition:border-color 0.3s;appearance:none;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(200,185,138,0.28)}
+.fg textarea{resize:vertical;min-height:120px}
+.fg select option{background:var(--deep2)}
+.btn-submit{grid-column:span 2;background:var(--gold);color:var(--deep);border:none;padding:1rem;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;margin-top:0.4rem}
+.btn-submit:hover{background:var(--gold-light);box-shadow:0 8px 28px rgba(201,168,76,0.32)}
+
+/* ── FOOTER ── */
+footer{background:var(--deep2);border-top:1px solid rgba(201,168,76,0.08);padding:4.5rem 5rem 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:4rem;margin-bottom:3.5rem}
+.fb-brand p{font-size:0.8rem;line-height:1.85;color:var(--text);max-width:270px;margin:1rem 0 1.3rem}
+.footer-socials{display:flex;gap:0.7rem}
+.fs-btn{width:36px;height:36px;border:1px solid rgba(201,168,76,0.18);display:flex;align-items:center;justify-content:center;color:var(--text);font-size:0.8rem;font-weight:700;text-decoration:none;transition:all 0.3s;cursor:pointer}
+.fs-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.05)}
+.fc h4{font-size:0.64rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:0.6rem}
+.fc ul a{font-size:0.82rem;color:var(--text);text-decoration:none;transition:color 0.3s}
+.fc ul a:hover{color:var(--cream)}
+.fn-form{display:flex;margin-top:0.4rem}
+.fn-form input{flex:1;background:var(--deep3);border:1px solid rgba(201,168,76,0.12);border-right:none;color:var(--cream);padding:0.7rem 0.9rem;font-family:'Montserrat',sans-serif;font-size:0.78rem;outline:none}
+.fn-form input::placeholder{color:rgba(200,185,138,0.28)}
+.fn-form button{background:var(--gold);border:none;padding:0 1.1rem;color:var(--deep);font-size:0.9rem;cursor:pointer;transition:background 0.3s;font-weight:700}
+.fn-form button:hover{background:var(--gold-light)}
+.footer-bottom{padding-top:2rem;border-top:1px solid rgba(201,168,76,0.07);display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:0.73rem;color:rgba(200,185,138,0.35)}
+.fb-links{display:flex;gap:1.8rem}
+.fb-links a{font-size:0.7rem;color:rgba(200,185,138,0.35);text-decoration:none;transition:color 0.3s}
+.fb-links a:hover{color:var(--gold)}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(26px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)}
+.r.vis{opacity:1;transform:translateY(0)}
+.r2{transition-delay:0.1s}.r3{transition-delay:0.18s}.r4{transition-delay:0.26s}.r5{transition-delay:0.34s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  nav,nav.scrolled{padding:1.2rem 2rem}
+  section{padding:5rem 2rem}
+  .hero-content{padding:0 2rem}
+  .slide-dots,.slide-counter,.slide-dest{display:none}
+  .stats-strip{padding:3rem 2rem}
+  .svc-layout{grid-template-columns:1fr}
+  .svc-left{position:static}
+  .world-grid{grid-template-columns:1fr 1fr}
+  .world-card.wide{grid-column:span 2}
+  .ghana-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:260px 260px 200px}
+  .dest-tile.tall{grid-row:span 1}
+  .pkg-grid{grid-template-columns:1fr 1fr}
+  .why-layout{grid-template-columns:1fr}
+  .why-visual{display:none}
+  .testi-wrap{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr;gap:3rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .airlines-logos{gap:1.5rem}
+  .photo-strip{height:300px}
+  .team-photos-grid{grid-template-columns:1fr 1fr!important}
+  .team-life-grid{grid-template-columns:repeat(4,1fr)!important}
+  .team-life-box{height:200px!important}
+  .team-values-grid{grid-template-columns:1fr 1fr!important;padding:1.8rem!important}
+  .cert-grid{grid-template-columns:1fr 1fr!important;padding:0 2rem 3rem!important}
+}
+@media(max-width:700px){
+  nav,nav.scrolled{padding:0.9rem 1.2rem}
+  .logo-emblem{width:38px;height:38px}
+  .logo-name{font-size:0.95rem}
+  .logo-sub{font-size:0.5rem;letter-spacing:0.25em}
+  .nav-cta{display:none}
+  .hero-h1{font-size:2.8rem}
+  .stats-strip{grid-template-columns:1fr 1fr;gap:2rem}
+  .world-grid{grid-template-columns:1fr}
+  .world-card.wide{grid-column:span 1}
+  .ghana-mosaic{grid-template-columns:1fr}
+  .dest-tile{height:220px}
+  .svc-grid{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .contact-form{grid-template-columns:1fr}
+  .contact-form .full,.btn-submit{grid-column:span 1}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .world-intro,.ghana-intro{flex-direction:column;gap:1rem;align-items:flex-start}
+  .hero-contact-strip{flex-direction:column;gap:1rem}
+  .photo-strip{height:220px}
+  .ps-strip-title h2{font-size:1.4rem}
+  .team-photos-grid{grid-template-columns:1fr!important;gap:10px!important}
+  .team-photo-box{height:280px!important}
+  .team-life-grid{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .team-life-box{height:170px!important}
+  .team-values-grid{grid-template-columns:1fr!important;padding:1.6rem!important;gap:1.5rem!important}
+  .cert-grid{grid-template-columns:1fr!important;padding:0 1.2rem 2.5rem!important;gap:14px!important}
+  .cert-box{height:260px!important}
+}
+@media(max-width:380px){
+  .logo-sub{display:none}
+  .logo-name{font-size:0.88rem}
+  .nav-iata-badge{width:38px;height:38px;margin-left:0.4rem}
+  .team-life-grid{grid-template-columns:1fr!important}
+  .team-life-box{height:220px!important}
+  .team-photo-box{height:240px!important}
+  .cert-box{height:230px!important}
+}
+
+/* -- IMAGE LIGHTBOX -- */
+.bg-lightbox{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:3rem 2rem;background:rgba(6,8,12,0.92);backdrop-filter:blur(6px);opacity:0;transition:opacity 0.3s ease}
+.bg-lightbox.open{display:flex;opacity:1}
+.bg-lightbox-img{max-width:min(92vw,1100px);max-height:86vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,0.6);border:1px solid rgba(201,168,76,0.25);opacity:0;transform:scale(0.94);transition:transform 0.35s ease,opacity 0.35s ease}
+.bg-lightbox.open .bg-lightbox-img{opacity:1;transform:scale(1)}
+.bg-lightbox-close{position:absolute;top:1.6rem;right:2rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(201,168,76,0.35);background:rgba(8,8,8,0.6);color:var(--gold-light);font-size:1.3rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.25s}
+.bg-lightbox-close:hover{background:var(--gold);color:var(--deep);border-color:var(--gold)}
+.bg-lightbox-caption{position:absolute;bottom:1.8rem;left:0;right:0;text-align:center;font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--cream);letter-spacing:0.02em}
+.lightbox-trigger{cursor:zoom-in}
+</style>
+</head>
+<body>
+
+<!-- IMAGE LIGHTBOX OVERLAY -->
+<div class="bg-lightbox" id="bgLightbox">
+  <button type="button" class="bg-lightbox-close" id="bgLightboxClose" aria-label="Close image">&times;</button>
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" class="bg-lightbox-img" id="bgLightboxImg">
+  <div class="bg-lightbox-caption" id="bgLightboxCaption"></div>
+</div>
+
+
+<!-- NAV --> 
+<nav id="navbar">
+  <a href="#" class="logo-wrap">
+    <img src="img/BG.jpeg" alt="Benny Glory Travel & Tour logo" class="logo-emblem">
+    <div>
+      <div class="logo-name">Benny Glory</div>
+      <div class="logo-sub">Travel &amp; Tour · Kumasi, Ghana</div>
+    </div>
+    <img src="img/ITA.jpeg" alt="IATA - International Air Transport Association" class="nav-iata-badge">
+  </a> 
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#world">International</a></li>
+    <li><a href="#ghana">Ghana</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button type="button" class="nav-cta nav-cta-mobile" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeMobileNav()">Book Now</button></li>
+  </ul>
+  <button type="button" class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+  <div class="hamburger" id="hamburger" aria-label="Menu" role="button" aria-expanded="false"><span></span><span></span><span></span></div>
+  <div class="nav-overlay" id="navOverlay"></div>
+</nav>
+
+<!-- HERO SLIDESHOW -->
+<div class="hero">
+  <div class="hero-slides">
+    <div class="slide s1 active"></div>
+    <div class="slide s2"></div>
+    <div class="slide s3"></div>
+    <div class="slide s4"></div>
+    <div class="slide s5"></div>
+    <div class="slide s6"></div>
+  </div>
+  <div class="hero-slides-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">IATA Member · 5.0 ★ Rated · Kumasi, Ghana</span></div>
+    <h1 class="hero-h1">Your <span style="color:var(--gold)">Gateway</span> to<br><em>the World</em></h1>
+    <p class="hero-tagline">Ghana's trusted travel partner for the globe</p>
+    <p class="hero-desc">Benny Glory Travel and Tour Agency connects you to the world — from Dubai,Madrid,London,Canada,United States, Mexico, Netherlands,Ghana, Morroco,Nigeria to any country of your choice. Air ticketing, visa applications, hotel reservations, and fully guided tours, all from our office in Kumasi, Ghana </p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-gold">Explore Packages</a>
+      <a href="#contact" class="btn-outline">Get a Free Quote</a>
+    </div>
+    <div class="hero-contact-strip">
+      <div class="hc-item">
+        <span style="font-size:1rem">📞</span>
+        <div><span class="hc-label">Call / WhatsApp</span><a href="tel:0243374379" class="hc-value">024 337 4379</a></div>
+      </div>
+      <div class="hc-item">
+        <span style="font-size:1rem">📞</span>
+        <div><span class="hc-label">Alternate Line</span><a href="tel:0245259903" class="hc-value">050 848 5202</a></div>
+      </div>
+      <div class="hc-item">
+        <span style="font-size:1rem">✉️</span>
+        <div><span class="hc-label">Email</span><a href="mailto:bennyglory28@gmail.com" class="hc-value">bennyglory28@gmail.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-dots" id="slideDots">
+    <div class="dot active" onclick="goSlide(0)"></div>
+    <div class="dot" onclick="goSlide(1)"></div>
+    <div class="dot" onclick="goSlide(2)"></div>
+    <div class="dot" onclick="goSlide(3)"></div>
+    <div class="dot" onclick="goSlide(4)"></div>
+    <div class="dot" onclick="goSlide(5)"></div>
+  </div>
+  <div class="slide-counter" id="slideCounter">01 / 06</div>
+  <div class="slide-dest">
+    <span class="slide-dest-flag vis" id="slideFlag">🇮🇹</span>
+    <div class="slide-dest-name vis" id="slideName">Venice, Italy</div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner">
+  <span class="ticker-item">✈ IATA Member — Ghana</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Air Ticketing</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Visa Application</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Hotel Reservation</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Flight Reservations</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Dubai · London · Paris · New York</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Cities Travel</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Accommodation Reservation</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Travel &amp; Tours</span><span class="ticker-sep"></span>
+  <span class="ticker-item">✈ IATA Member — Ghana</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Air Ticketing</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Visa Application</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Hotel Reservation</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Flight Reservations</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Dubai · London · Paris · New York</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Cities Travel</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Accommodation Reservation</span><span class="ticker-sep"></span>
+  <span class="ticker-item">Travel &amp; Tours</span><span class="ticker-sep"></span>
+</div></div>
+
+<!-- INTERNATIONAL DESTINATIONS -->
+<section id="world">
+  <div class="world-intro r">
+    <div>
+      <div class="sec-label">Fly Worldwide</div>
+      <h2 class="sec-h2">International <em>Destinations</em></h2>
+      <p class="sec-p" style="margin-top:0.5rem">Assist in visa applications, and Book fligts to hundreds of destinations across every continent. Where would you like to go?</p>
+    </div>
+    <a href="#contact" class="btn-outline">Plan My Trip</a>
+  </div>
+
+  <div class="world-tabs r">
+    <button type="button" class="wtab active" onclick="filterDest('all',this)">All</button>
+    <button type="button" class="wtab" onclick="filterDest('europe',this)">Europe</button>
+    <button type="button" class="wtab" onclick="filterDest('middleeast',this)">Middle East</button>
+    <button type="button" class="wtab" onclick="filterDest('asia',this)">Asia</button>
+    <button type="button" class="wtab" onclick="filterDest('americas',this)">Americas</button>
+    <button type="button" class="wtab" onclick="filterDest('africa',this)">Africa</button>
+  </div>
+
+  <div class="world-grid r r2" id="worldGrid">
+    <!-- EUROPE -->
+    <div class="world-card wide" data-region="europe">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1000" alt="Paris">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Popular</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇫🇷</span>
+        <h3>Paris, France</h3>
+        <p>Eiffel Tower · Louvre · Champs-Élysées</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="europe">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=700" alt="Venice">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇮🇹</span>
+        <h3>Venice, Italy</h3>
+        <p>Canals · St Mark's · Gondola Tours</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="europe">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700" alt="London">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Visa Assist</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇬🇧</span>
+        <h3>London, UK</h3>
+        <p>Big Ben · Buckingham · Hyde Park</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="europe">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=700" alt="Barcelona">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇪🇸</span>
+        <h3>Barcelona, Spain</h3>
+        <p>Sagrada Família · La Rambla · Gothic Quarter</p>
+      </div>
+    </div>
+    <!-- MIDDLE EAST -->
+    <div class="world-card wide" data-region="middleeast">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1000" alt="Dubai">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Top Pick</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇦🇪</span>
+        <h3>Dubai, UAE</h3>
+        <p>Burj Khalifa · Desert Safari · Gold Souk</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="middleeast">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=700" alt="Istanbul">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇹🇷</span>
+        <h3>Istanbul, Turkey</h3>
+        <p>Hagia Sophia · Bosphorus · Grand Bazaar</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="middleeast">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=700" alt="Mecca">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Pilgrimage</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇸🇦</span>
+        <h3>Mecca &amp; Medina</h3>
+        <p>Hajj · Umrah · Holy Sites</p>
+      </div>
+    </div>
+    <!-- ASIA -->
+    <div class="world-card" data-region="asia">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=700" alt="India">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇮🇳</span>
+        <h3>Taj Mahal, India</h3>
+        <p>Agra · Jaipur · Delhi Golden Triangle</p>
+      </div>
+    </div>
+    <div class="world-card wide" data-region="asia">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1000" alt="Tokyo Kyoto Japan">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">New Route</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇯🇵</span>
+        <h3>Tokyo &amp; Kyoto, Japan</h3>
+        <p>Mount Fuji · Cherry Blossoms · Temples</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="asia">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=700" alt="Singapore">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇸🇬</span>
+        <h3>Singapore</h3>
+        <p>Marina Bay · Gardens by the Bay · Sentosa</p>
+      </div>
+    </div>
+    <!-- AMERICAS -->
+    <div class="world-card" data-region="americas">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=700" alt="New York">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Visa Assist</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇺🇸</span>
+        <h3>New York, USA</h3>
+        <p>Times Square · Statue of Liberty · Central Park</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="americas">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=700" alt="Brazil">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇧🇷</span>
+        <h3>Rio de Janeiro, Brazil</h3>
+        <p>Christ the Redeemer · Copacabana · Carnival</p>
+      </div>
+    </div>
+    <!-- AFRICA -->
+    <div class="world-card" data-region="africa">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=700" alt="Nairobi">
+      <div class="world-card-overlay"></div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇰🇪</span>
+        <h3>Nairobi, Kenya</h3>
+        <p>Maasai Mara · Nairobi National Park · Safari</p>
+      </div>
+    </div>
+    <div class="world-card" data-region="africa">
+      <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1544517333-3ceafba4d01b?w=700" alt="Koutoubia Mosque, Marrakech">
+      <div class="world-card-overlay"></div>
+      <div class="world-pill">Trending</div>
+      <div class="world-card-info">
+        <span class="world-card-flag">🇲🇦</span>
+        <h3>Marrakech, Morocco</h3>
+        <p>Medina · Sahara Desert · Atlas Mountains</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600" alt="Paris">
+    <div class="ps-panel-label"><span class="flag">🇫🇷</span><span>Paris</span><small>France</small></div>
+  </div>
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600" alt="Dubai">
+    <div class="ps-panel-label"><span class="flag">🇦🇪</span><span>Dubai</span><small>UAE</small></div>
+  </div>
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600" alt="India">
+    <div class="ps-panel-label"><span class="flag">🇮🇳</span><span>Taj Mahal</span><small>India</small></div>
+  </div>
+  <div class="ps-strip-title">
+    <p>We fly you there</p>
+    <h2>The World Awaits</h2>
+  </div>
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600" alt="Japan">
+    <div class="ps-panel-label"><span class="flag">🇯🇵</span><span>Tokyo</span><small>Japan</small></div>
+  </div>
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600" alt="New York">
+    <div class="ps-panel-label"><span class="flag">🇺🇸</span><span>New York</span><small>USA</small></div>
+  </div>
+  <div class="ps-panel">
+    <img class="lightbox-trigger" src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600" alt="Venice">
+    <div class="ps-panel-label"><span class="flag">🇮🇹</span><span>Venice</span><small>Italy</small></div>
+  </div>
+</div>
+
+<!-- GHANA DESTINATIONS -->
+<section id="ghana">
+  <div class="ghana-intro r">
+    <div>
+      <div class="sec-label">Explore Ghana</div>
+      <h2 class="sec-h2">Top Ghana <em>Destinations</em></h2>
+    </div>
+    <a href="#contact" class="btn-outline">Plan Your Ghana Trip</a>
+  </div>
+  <div class="ghana-mosaic r r2">
+    <div class="dest-tile tall">
+      <img class="lightbox-trigger" src="https://commons.wikimedia.org/wiki/Special:FilePath/Cape_Coast_Castle,_Cape_Coast,_Ghana.JPG?width=900" alt="Cape Coast Castle">
+      <div class="dest-pill">Heritage</div>
+      <div class="dest-tile-info"><h3>Cape Coast Castle</h3><p>Cape Coast · Central Region</p></div>
+    </div>
+    <div class="dest-tile">
+      <img class="lightbox-trigger" src="https://commons.wikimedia.org/wiki/Special:FilePath/Accra_Skyline.jpg?width=700" alt="Accra">
+      <div class="dest-tile-info"><h3>Accra City</h3><p>Greater Accra Region</p></div>
+    </div>
+    <div class="dest-tile">
+      <img class="lightbox-trigger" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manhyia_Palace_Museum,_Kumasi,_Ghana.jpg?width=700" alt="Manhyia Palace">
+      <div class="dest-pill">Our Base</div>
+      <div class="dest-tile-info"><h3>Kumasi</h3><p>Ashanti Region</p></div>
+    </div>
+    <div class="dest-tile">
+      <img class="lightbox-trigger" src="https://commons.wikimedia.org/wiki/Special:FilePath/Kakum_Canopy_Walk,_Kakum_National_Park,_Ghana.JPG?width=700" alt="Kakum">
+      <div class="dest-tile-info"><h3>Kakum National Park</h3><p>Central Region</p></div>
+    </div>
+    <div class="dest-tile">
+      <img class="lightbox-trigger" src="https://commons.wikimedia.org/wiki/Special:FilePath/Wli_Waterfall.jpg?width=700" alt="Volta">
+      <div class="dest-pill">Nature</div>
+      <div class="dest-tile-info"><h3>Volta Region</h3><p>Lake Volta · Wli Falls</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="svc-layout">
+    <div class="svc-left r">
+      <div class="sec-label">Our Services</div>
+      <h2 class="sec-h2">Everything You<br>Need to <em>Travel</em></h2>
+      <p class="sec-p">From a single flight booking to a fully planned international adventure — Benny Glory handles every detail with expertise and care from our Suame Roundabout office in Kumasi.</p>
+      <div class="open-hours">
+        <div class="oh-title">Working Hours</div>
+        <div class="oh-row"><span>Monday – Friday</span><span>8:30am – 5:30pm</span></div>
+        <div class="oh-row today"><span>Saturday</span><span>9:00am – 3:00pm</span></div>
+        <div class="oh-row"><span>Sunday</span><span>Closed</span></div>
+        <div class="oh-open">● Currently Open · Closes 5pm</div>
+      </div>
+    </div>
+    <div class="svc-grid r r2">
+      <div class="svc-card"><span class="svc-num">01</span><span class="svc-icon">✈️</span><h3>Airline Ticketing</h3><p>Domestic and international flight bookings across all major carriers. We are part of the IATA family and Other Travel and Tour companies can buy tickets from us for competitive commissions — Emirates, Qatar, British Airways, and more — at the best available fares.</p></div>
+      <div class="svc-card"><span class="svc-num">02</span><span class="svc-icon">📋</span><h3>Visa Application &amp; Consultancy</h3><p>Professional visa guidance for Ghana and international destinations including the UK, USA, Schengen, Dubai, Canada, and more.</p></div>
+      <div class="svc-card"><span class="svc-num">03</span><span class="svc-icon">🏨</span><h3>Hotel Reservation</h3><p>Vetted accommodation worldwide — from budget guesthouses to 5-star international hotels — tailored to your needs and budget.</p></div>
+      <div class="svc-card"><span class="svc-num">04</span><span class="svc-icon">🗺️</span><h3>Tour Packages</h3><p>Fully guided group and private tours across Ghana's top sites and internationally — curated by local experts who know every detail.</p></div>
+      <div class="svc-card"><span class="svc-num">05</span><span class="svc-icon">🏙️</span><h3>Cities Travel</h3><p>Comfortable inter-city and international city travel arrangements — from Kumasi to Accra, Tamale, Dubai, London, and beyond.</p></div>
+      <div class="svc-card"><span class="svc-num">06</span><span class="svc-icon">🏠</span><h3>Accommodation Reservation</h3><p>Short and long-stay accommodation for business travelers, tourists, and diaspora visitors at the best available rates.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip r">
+  <div class="stat"><span class="stat-n">5.0</span><span class="stat-l">Google Star Rating</span></div>
+  <div class="stat"><span class="stat-n">50+</span><span class="stat-l">Countries Covered</span></div>
+  <div class="stat"><span class="stat-n">8+</span><span class="stat-l">Services Offered</span></div>
+  <div class="stat"><span class="stat-n">100%</span><span class="stat-l">Client Satisfaction</span></div>
+</div>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="r">
+    <div class="sec-label">Curated Packages</div>
+    <h2 class="sec-h2">Popular <em>Travel Packages</em></h2>
+    <p class="sec-p">Handpicked journeys combining flights, hotels, tours, and transfers — all arranged by our expert Kumasi team.</p>
+  </div>
+  <div class="pkg-grid">
+    <!-- Dubai --> 
+    <div class="pkg-card r r2">
+      <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800')"></div>
+      <div class="pkg-body">
+        <div class="pkg-dur">🇦🇪  Days ·  Nights</div>
+        <h3>Dubai City Experience</h3>
+        <p>Discover the dazzling skyline of Dubai — from the iconic Burj Khalifa to desert dunes and gold souks.</p>
+        <ul class="pkg-features">
+          <li>Return flights from Accra or Kumasi</li><li>Hotel Reservation</li><li>Visa Application</li><li>International Flights</li>
+        </ul>
+        
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+    <!-- London/UK -->
+    <div class="pkg-card hot r r3">
+      <div class="pkg-hot-badge">Most Popular</div>
+      <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800')"></div>
+      <div class="pkg-body">
+        <div class="pkg-dur">🇬🇧  Days ·  Nights</div>
+        <h3>London &amp; UK Explorer</h3>
+        <p>Experience the grandeur of London — royal palaces, world-class museums, and the vibrant multicultural heart of the UK.</p>
+        <ul class="pkg-features">
+          <li>Return international flights</li><li>UK Visa assistance</li><li>Hotel Reservations</li>
+        </ul>
+        
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+    <!-- Paris -->
+    <div class="pkg-card r r4">
+      <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800')"></div>
+      <div class="pkg-body">
+        <div class="pkg-dur">🇫🇷  Days ·  Nights</div>
+        <h3>Paris Romance &amp; Culture</h3>
+        <p>Walk the banks of the Seine, ascend the Eiffel Tower, and explore the artistic masterpieces of the Louvre.</p>
+        <ul class="pkg-features">
+          <li>International Flights</li><li>Schengen Visa support</li><li>Hotel Reservation</li><li>Visa Assistance</li>
+        </ul>
+        
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+    <!-- India/Hajj -->
+    <div class="pkg-card r r2">
+      <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800')"></div>
+      <div class="pkg-body">
+        <div class="pkg-dur">🇮🇳 8 Days · 7 Nights</div>
+        <h3>India Golden Triangle</h3>
+        <p>Marvel at the Taj Mahal, explore the Pink City of Jaipur, and soak in the history of Delhi on this unforgettable journey.</p>
+        <ul class="pkg-features">
+          <li>Return flights from Accra</li><li>India Visa assistance</li><li>Hotel Reservation</li><li>International Flights</li>
+        </ul>
+        
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+    <!-- Mecca/Umrah -->
+    <div class="pkg-card r r3">
+      <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800')"></div>
+      <div class="pkg-body">
+        <div class="pkg-dur">🇸🇦 14 Days · Pilgrimage</div>
+        <h3>Umrah &amp; Holy Land Package</h3>
+        <p>A spiritually enriching Umrah package — flights, accommodation in Mecca and Medina, and full group coordination.</p>
+        <ul class="pkg-features">
+          <li>Return flights to Jeddah/Medina</li><li>Hotel Reservation</li><li>visa Application</li>
+        </ul>
+        
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+    <!-- Ghana -->
+    <div class="pkg-card r r4">
+      <div class="pkg-img" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ghanaian_women_in_Kente_cloth_and_beads.jpg?width=800')"></div> 
+      <div class="pkg-body">
+        <div class="pkg-dur">🇬🇭 7 Days · Ghana Tour</div>
+        <h3>Ultimate Ghana Discovery</h3>
+        <p>The complete Ghanaian experience — Accra highlights, Kumasi's Ashanti Kingdom, Cape Coast castles, and the Volta Region.</p>
+        <ul class="pkg-features">
+          <li>Cape Coast &amp; Elmina castles</li><li>Kakum canopy walkway</li><li>All meals &amp; accommodation</li><li>Hotel Reservation</li>
+        </ul>
+       
+        <a href="#contact" class="pkg-cta">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AIRLINE PARTNERS -->
+<div class="airlines-bar r">
+  <div class="sec-label" style="justify-content:center"><span>Our Partners</span></div>
+  <h3 style="font-family:'Playfair Display',serif;color:var(--white);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem">Airline <em style="color:var(--gold);font-style:italic">Partners</em></h3>
+  <p style="font-size:0.82rem;color:var(--text);max-width:500px;margin:0 auto">We work with the world's leading carriers to get you the best routes, fares, and service from Ghana to anywhere.</p>
+  <div class="airlines-logos">
+    <div class="airline-logo"><span class="aicon">✈</span><span>Emirates</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Qatar Airways</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>British Airways</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Kenya Airways</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Turkish Airlines</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Air France</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Ethiopian Airlines</span></div>
+    <div class="airline-logo"><span class="aicon">✈</span><span>Ghana Airlines</span></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-layout">
+    <div class="r">
+      <div class="sec-label">Why Choose Us</div>
+      <h2 class="sec-h2">Travel with <em>Confidence</em></h2>
+      <p class="sec-p">Benny Glory has been the trusted name in Kumasi for travel excellence — handling everything from international flight bookings to full heritage tours across Ghana and the world.</p>
+      <ul class="why-list">
+        <li class="why-row"><span class="why-n">01</span><div><h4>Kumasi-Based, World-Connected</h4><p>Our Suame Roundabout office is your gateway to the entire world — from Dubai and London to Cape Coast and Volta.</p></div></li>
+        <li class="why-row"><span class="why-n">02</span><div><h4>Multi-Airline Partnerships</h4><p>We work with Emirates, Qatar Airways, British Airways, Turkish Airlines, and more to find you the best international routes.</p></div></li>
+        <li class="why-row"><span class="why-n">03</span><div><h4>Visa Success Expertise</h4><p>Our team has helped hundreds of Ghanaians secure UK, US, Schengen, UAE, and Saudi visas with thorough documentation guidance.</p></div></li>
+        <li class="why-row"><span class="why-n">04</span><div><h4>5-Star Google Rated</h4><p>Our 5.0 Google rating reflects consistent excellence — from first enquiry to safe return home, every client is treated like family.</p></div></li>
+        <li class="why-row"><span class="why-n">05</span><div><h4>Proud IATA Member — Ghana</h4><p>Benny Glory Travel &amp; Tour is a proud member of the International Air Transport Association (IATA) in Ghana — a global standard of credibility, safety, and professional excellence. This accreditation guarantees you access to official airline fares, verified ticketing, and the highest service standards recognised worldwide.</p></div></li>
+      </ul>
+    </div>
+    <div class="why-visual r r2"> 
+      <div class="wv-main"></div>
+      <div class="wv-sec"></div>
+      <div class="wv-badge"><strong>5★</strong><span>Google Rated</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- IATA MEMBERSHIP BANNER -->
+<div style="background:linear-gradient(135deg,var(--deep2) 0%,var(--deep3) 100%);border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);padding:3rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem">
+  <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+    <div style="width:90px;height:90px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:#fff;padding:8px">
+      <img src="img/ITA.jpeg" alt="IATA - International Air Transport Association" style="max-width:100%;max-height:100%;object-fit:contain">
+    </div>
+    <div>
+      <div style="font-size:0.6rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem">International Air Transport Association</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:0.6rem">Proud <em style="color:var(--gold);font-style:italic">IATA Member</em> in Ghana</h3>
+      <p style="font-size:0.83rem;line-height:1.85;color:var(--text);max-width:560px">Benny Glory Travel &amp; Tour is an accredited member of the International Air Transport Association (IATA) — the global trade body representing over 320 airlines worldwide. Our IATA membership certifies that we operate to the highest industry standards, giving you access to verified official airline fares, secure ticketing, and internationally recognised travel services right here in Ghana.</p>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:0.8rem;min-width:200px">
+    <div style="display:flex;align-items:center;gap:0.7rem"><span style="color:var(--gold);font-size:0.9rem">✦</span><span style="font-size:0.8rem;color:var(--cream2)">Verified Official Ticketing</span></div>
+    <div style="display:flex;align-items:center;gap:0.7rem"><span style="color:var(--gold);font-size:0.9rem">✦</span><span style="font-size:0.8rem;color:var(--cream2)">Global Industry Standards</span></div>
+    <div style="display:flex;align-items:center;gap:0.7rem"><span style="color:var(--gold);font-size:0.9rem">✦</span><span style="font-size:0.8rem;color:var(--cream2)">Accredited in Ghana</span></div>
+    <div style="display:flex;align-items:center;gap:0.7rem"><span style="color:var(--gold);font-size:0.9rem">✦</span><span style="font-size:0.8rem;color:var(--cream2)">Trusted by 320+ Airlines</span></div>
+  </div>
+</div>
+
+<!-- TEAM SECTION -->
+<section id="team" style="background:var(--deep3)">
+  <div style="text-align:center" class="r">
+
+    <div class="sec-label" style="justify-content:center"><span>Our People</span></div>
+    <h2 class="sec-h2" style="text-align:center">Meet the <em>Benny Glory</em> Team And <em> Location</em></h2>
+    <p style="font-size:0.88rem;line-height:1.85;color:var(--text);max-width:600px;margin:0 auto 3rem">Behind every seamless journey is a dedicated team of travel professionals committed to making your dream trip a reality. <em style="color: white"> Our Kumasi-based staff bring passion, expertise,</em> <em style="color:var(--gold)"> and personal care to every booking </em>  </p> 
+
+  </div>
+
+
+  <!-- Team Group Photos -->
+  
+  <!-- Office Celebration Moments -->
+  <div style="margin-bottom:1.5rem" class="r r3">
+    <div style="font-size:0.63rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.8rem"><span style="display:block;width:24px;height:1px;background:var(--gold)"></span>Life at Benny Glory</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px" class="team-life-grid">
+      <div style="position:relative;overflow:hidden;height:240px;background:var(--deep2)" class="team-life-box">
+        <img class="lightbox-trigger" src="img/KING1.jpeg" alt=" " style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:relative;z-index:1;filter:brightness(0.78) saturate(0.9);transition:all 0.5s" onmouseover="this.style.filter='brightness(0.95) saturate(1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.78) saturate(0.9)';this.style.transform='scale(1)'">
+        <div style="position:absolute;z-index:2;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);text-align:center">
+          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)"></p>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;height:240px;background:var(--deep2)" class="team-life-box">
+        <img class="lightbox-trigger" src="img/HANNY.jpeg" alt=" " style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;position:relative;z-index:1;filter:brightness(0.78) saturate(0.9);transform-origin:center 15%;transition:all 0.5s" onmouseover="this.style.filter='brightness(0.95) saturate(1)';this.style.transform='scale(1.03)'" onmouseout="this.style.filter='brightness(0.78) saturate(0.9)';this.style.transform='scale(1)'">
+        <div style="position:absolute;z-index:2;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);text-align:center">
+          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)"> </p>
+        </div>
+      </div>
+      <div style="position:relative;overflow:hidden;height:240px;background:var(--deep2)" class="team-life-box">
+        <img class="lightbox-trigger" src="img/Grid 2.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;position:relative;z-index:1;filter:brightness(0.78) saturate(0.9);transform-origin:center 15%;transition:all 0.5s" onmouseover="this.style.filter='brightness(0.95) saturate(1)';this.style.transform='scale(1.03)'" onmouseout="this.style.filter='brightness(0.78) saturate(0.9)';this.style.transform='scale(1)'">
+        <div style="position:absolute;z-index:2;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);text-align:center">
+          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-light)"></p>
+        </div>
+      </div>
+      
+      <div style="position:relative;overflow:hidden;height:240px;background:var(--deep2)" class="team-life-box">
+        <img class="lightbox-trigger" src="img/16.jpeg" alt="Company Location" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;position:relative;z-index:1;filter:brightness(0.78) saturate(0.9);transition:all 0.5s" onmouseover="this.style.filter='brightness(0.95) saturate(1)';this.style.transform='scale(1.06)'" onmouseout="this.style.filter='brightness(0.78) saturate(0.9)';this.style.transform='scale(1)'">
+        <div style="position:absolute;z-index:2;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);text-align:center">
+          <p style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white) "> LOCATED AT SUAME </p>
+          <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light)"> OPPOSITE THE WATER WORKS </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Values -->
+  <div style="background:var(--deep2);border-top:1px solid rgba(201,168,76,0.1);padding:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;margin-top:1rem" class="r r4 team-values-grid">
+    <div>
+      <span style="font-size:2rem;display:block;margin-bottom:0.8rem">🤝</span>
+      <h4 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:700;margin-bottom:0.5rem">People-First Service</h4>
+      <p style="font-size:0.78rem;line-height:1.75;color:var(--text)">Every client is treated like family. Our team goes beyond booking — we build journeys with genuine care.</p>
+    </div>
+    <div>
+      <span style="font-size:2rem;display:block;margin-bottom:0.8rem">🌍</span>
+      <h4 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:700;margin-bottom:0.5rem">Local Roots, Global Reach</h4>
+      <p style="font-size:0.78rem;line-height:1.75;color:var(--text)">Based in Kumasi, connected to the world. Our team brings deep local knowledge with international expertise.</p>
+    </div>
+    <div>
+      <span style="font-size:2rem;display:block;margin-bottom:0.8rem">✈</span>
+      <h4 style="font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);font-weight:700;margin-bottom:0.5rem">Certified Professionals</h4>
+      <p style="font-size:0.78rem;line-height:1.75;color:var(--text)">IATA-accredited, continuously trained, and dedicated to delivering world-class travel solutions for every client.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="text-align:center" class="r">
+    <div class="sec-label" style="justify-content:center"><span>Client Voices</span></div>
+    <h2 class="sec-h2" style="text-align:center">What Our <em>Clients</em> Say</h2>
+  </div>
+  <div class="testi-wrap">
+    <div class="testi-card r r2">
+      <div class="testi-q">"</div><div class="testi-stars">★★★★★</div>
+      <blockquote>Benny Glory got me my UK visa on the first attempt! They guided me through every document, made follow-ups on my behalf, and even booked my flights and hotel in London. Absolutely outstanding.</blockquote>
+      <div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Akila Yakubu </div><div class="testi-loc">Kumasi, Ghana</div></div></div>
+    </div>
+    <div class="testi-card r r3">
+      <div class="testi-q">"</div><div class="testi-stars">★★★★★</div>
+      <blockquote>Our family Umrah trip to Mecca was a dream come true. Benny Glory arranged everything — flights, hotel near the Haram, and the full group coordination. Every detail was perfect. Alhamdulillah!</blockquote>
+      <div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Emmanuella Anokyewaa</div><div class="testi-loc">Accra, Ghana</div></div></div>
+    </div>
+    <div class="testi-card r r4">
+      <div class="testi-q">"</div><div class="testi-stars">★★★★★</div>
+      <blockquote>I booked my Dubai trip through Benny Glory and it was flawless. The Burj Khalifa visit, desert safari, hotel — everything was arranged perfectly. I'll never use anyone else for my travels.</blockquote>
+      <div class="testi-author"><div class="testi-av">E</div><div><div class="testi-name">Efua Mensah-Boateng</div><div class="testi-loc">London, UK</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-bg-img"></div><div class="cta-overlay"></div>
+  <div class="cta-content r">
+    <div class="sec-label">Start Your Journey</div>
+    <h2 class="cta-h2">Ready to <em>Explore</em><br>Ghana &amp; The World?</h2>
+    <p class="cta-p">Call us today or send a message — our Kumasi team will put together the perfect international or local travel plan tailored just for you.</p>
+    <div class="cta-actions">
+      <a href="tel:0243374379" class="btn-gold">📞 Call 020 263 5734</a>
+      <a href="tel:0245259903" class="btn-gold" style="background:transparent;border:1px solid var(--gold);color:var(--gold)">📞 050 848 5202</a>
+      <a href="#contact" class="btn-outline">Send an Enquiry</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="r">
+      <div class="sec-label">Get in Touch</div>
+      <h2 class="sec-h2">Reach <em>Us</em></h2>
+      <p class="sec-p">We're at Suame Roundabout opposite Ghana Water Company Ltd., Kumasi. Call, WhatsApp, or fill the form — we respond the same day.</p>
+      <div class="cib-detail"><div class="cib-icon">📍</div><div><h4>Office Address</h4><p>Suame Roundabout (Police Station)<br>Opp. Ghana Water Company Ltd.<br>Kumasi, Ashanti Region, Ghana</p></div></div>
+      <div class="cib-detail"><div class="cib-icon">📞</div><div><h4>Phone Line 1</h4><a href="tel:0243374379">024 337 4379</a></div></div>
+      <div class="cib-detail"><div class="cib-icon">📞</div><div><h4>Phone Line 3</h4><a href="tel:0508485202">050 848 5202</a></div></div>
+      <div class="cib-detail"><div class="cib-icon">📞</div><div><h4>Phone Line 4</h4><a href="tel:0202635734">020 263 5734</a></div></div>
+      <div class="cib-detail"><div class="cib-icon">✉️</div><div><h4>Email</h4><a href="mailto:bennyglory12@yahoo.com">bennyglory12@yahoo.com</a></div></div>
+      <div class="cib-detail"><div class="cib-icon">🕐</div><div><h4>Office Hours</h4><p>Mon – Fri: 8:30am – 5:30pm<br>Saturday: 9:00am – 3:00pm</p></div></div>
+      <a href="https://wa.me/233243374379" class="wa-btn" target="_blank">💬 Chat on WhatsApp</a> 
+    </div>
+    <div class="r r2">
+      <div class="contact-form">
+        <div class="fg"><label>First Name</label><input type="text" id="bg-fname" placeholder="Benny"></div>
+        <div class="fg"><label>Last Name</label><input type="text" id="bg-lname" placeholder="Glory"></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" id="bg-phone" placeholder="024 XXX XXXX"></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="bg-email" placeholder="you@email.com"></div>
+        <div class="fg full"><label>Service Needed</label>
+          <select id="bg-service">
+            <option value="">Select a service...</option>
+            <option>Airline Ticketing (International)</option>
+            <option>Airline Ticketing (Domestic Ghana)</option>
+            <option>Visa Application — UK</option>
+            <option>Visa Application — USA</option>
+            <option>Visa Application — Schengen/Europe</option>
+            <option>Visa Application — UAE/Dubai</option>
+            <option>Visa Application — Saudi (Umrah/Hajj)</option>
+            <option>Visa Application — Other</option>
+            <option>Hotel Reservation</option>
+            <option>Flight Reservation</option>
+            <option>Tour Package — International</option>
+            <option>Tour Package — Ghana</option>
+            <option>Umrah / Hajj Package</option>
+            <option>Accommodation Reservation</option>
+            <option>Corporate Travel</option>
+            <option>Custom / Bespoke Tour</option>
+          </select>
+        </div>
+        <div class="fg full"><label>Your Message</label><textarea id="bg-message" placeholder="Tell us your destination, travel dates, number of travelers, and any special requirements..."></textarea></div>
+        <button type="button" class="btn-submit" onclick="bgSendEnquiry()">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="fb-brand">
+      <a href="#" class="logo-wrap">
+        <img src="img/BG.jpeg" alt="Benny Glory Travel & Tour logo" class="logo-emblem">
+        <div><div class="logo-name">Benny Glory</div><div class="logo-sub">Travel &amp; Tour · Kumasi, Ghana</div></div>
+      </a>
+      <p>Ghana's trusted travel agency, based at Suame Roundabout, Kumasi. Air ticketing, visa consultancy, hotel reservations, and guided tours across Ghana and the world.</p>
+      <div class="footer-socials">
+        <a class="fs-btn" href="https://www.facebook.com/share/1BxtPMDh86/" title="Facebook" target="_blank" rel="noopener">f</a>
+        <a class="fs-btn" href="https://www.instagram.com/bennyglorytravels" title="Instagram" target="_blank" rel="noopener">in</a>
+        <a class="fs-btn" href="https://www.tiktok.com/@benny_glory" title="TikTok" target="_blank" rel="noopener">♪</a>
+        <a href="https://wa.me/233243374379" class="fs-btn" title="WhatsApp">w</a>
+        <a class="fs-btn" href="mailto:bennyglory28@gmail.com" title="Email">@</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#world">International Destinations</a></li>
+        <li><a href="#ghana">Ghana Destinations</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#packages">Tour Packages</a></li>
+        <li><a href="#team">Meet Our Team</a></li>
+        <li><a href="#why">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="#services">Airline Ticketing</a></li>
+        <li><a href="#services">Visa Application</a></li>
+        <li><a href="#services">Hotel Reservation</a></li>
+        <li><a href="#services">Flight Reservations</a></li>
+        <li><a href="#services">Cities Travel</a></li>
+        <li><a href="#services">Tour Packages</a></li>
+        <li><a href="#services">Umrah / Hajj Packages</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Stay Updated</h4>
+      <p style="font-size:0.79rem;line-height:1.75;color:var(--text);margin-bottom:0.8rem">Subscribe for travel deals, Ghana tips, and special international offers from our Kumasi office.</p>
+      <div class="fn-form"><input type="email" placeholder="your@email.com" ><button type="button">→</button></div>
+      <p style="font-size:0.72rem;color:var(--text);margin-top:1.2rem">📞 <a href="tel:0243374379" style="color:var(--gold);text-decoration:none;font-weight:600">024 337 4379</a></p>
+      <p style="font-size:0.72rem;color:var(--text);margin-top:0.4rem">📞 <a href="tel:0508485202" style="color:var(--gold);text-decoration:none;font-weight:600">050 848 5202</a></p>
+      <p style="font-size:0.72rem;color:var(--text);margin-top:0.4rem">📞 <a href="tel:0202635734" style="color:var(--gold);text-decoration:none;font-weight:600">020 263 5734</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Benny Glory Travel &amp; Tour Agency. Kumasi, Ghana. All rights reserved.</p>
+    <div class="fb-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#contact">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+// ── HERO SLIDESHOW ──
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const counter = document.getElementById('slideCounter');
+const flagEl = document.getElementById('slideFlag');
+const nameEl = document.getElementById('slideName');
+const destinations = [
+  {flag:'🇮🇹',name:'Venice, Italy'},
+  {flag:'🇫🇷',name:'Paris, France'},
+  {flag:'🇮🇳',name:'Taj Mahal, India'},
+  {flag:'🇯🇵',name:'Tokyo, Japan'},
+  {flag:'🇦🇪',name:'Dubai, UAE'},
+  {flag:'🇬🇭',name:'Kumasi, Ghana'}
+];
+let cur = 0, timer;
+
+function goSlide(n) {
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = n;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  counter.textContent = String(cur+1).padStart(2,'0') + ' / 06';
+  flagEl.classList.remove('vis'); nameEl.classList.remove('vis');
+  setTimeout(() => {
+    flagEl.textContent = destinations[cur].flag;
+    nameEl.textContent = destinations[cur].name;
+    flagEl.classList.add('vis'); nameEl.classList.add('vis');
+  }, 300);
+  clearInterval(timer);
+  timer = setInterval(() => goSlide((cur+1)%6), 5000);
+}
+
+timer = setInterval(() => goSlide((cur+1)%6), 5000);
+
+// ── DESTINATION FILTER ──
+function filterDest(region, btn) {
+  document.querySelectorAll('.wtab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.world-card').forEach(c => {
+    if (region === 'all' || c.dataset.region === region) {
+      c.style.display = '';
+    } else {
+      c.style.display = 'none';
+    }
+  });
+}
+
+// ── NAVBAR SCROLL ──
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// ── HAMBURGER (mobile slide-out menu) ──
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
+
+function openMobileNav() {
+  navLinks.classList.add('mobile-open');
+  navOverlay.classList.add('active');
+  hamburger.classList.add('active');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  navLinks.classList.remove('mobile-open');
+  navOverlay.classList.remove('active');
+  hamburger.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', function() {
+  navLinks.classList.contains('mobile-open') ? closeMobileNav() : openMobileNav();
+});
+navOverlay.addEventListener('click', closeMobileNav);
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+window.addEventListener('resize', () => { if (window.innerWidth > 1100) closeMobileNav(); });
+</script>
+<script>
+function bgSendEnquiry(){
+  var fname = document.getElementById('bg-fname').value.trim();
+  var lname = document.getElementById('bg-lname').value.trim();
+  var phone = document.getElementById('bg-phone').value.trim();
+  var email = document.getElementById('bg-email').value.trim();
+  var service = document.getElementById('bg-service').value;
+  var message = document.getElementById('bg-message').value.trim();
+  var btn = document.querySelector('.btn-submit');
+
+  if(!fname || !email || !message){
+    alert('Please fill in your name, email, and message before sending.');
+    return;
+  }
+
+  var subject = 'Travel Enquiry from ' + fname + ' ' + lname + (service ? ' - ' + service : '');
+  var originalText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  var fd = new FormData();
+  fd.append('First Name', fname);
+  fd.append('Last Name', lname);
+  fd.append('Phone', phone);
+  fd.append('Email', email);
+  fd.append('Service Needed', service);
+  fd.append('Message', message);
+  fd.append('_subject', subject);
+  fd.append('_replyto', email);
+
+  fetch('https://formspree.io/f/xlgywbqd', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: fd
+  }).then(function(response){
+    btn.disabled = false;
+    if(response.ok){
+      btn.textContent = 'Sent ✓';
+      document.getElementById('bg-fname').value = '';
+      document.getElementById('bg-lname').value = '';
+      document.getElementById('bg-phone').value = '';
+      document.getElementById('bg-email').value = '';
+      document.getElementById('bg-service').value = '';
+      document.getElementById('bg-message').value = '';
+      alert('Thank you! Your enquiry has been sent. We will get back to you shortly.');
+      setTimeout(function(){ btn.textContent = originalText; }, 2500);
+    } else {
+      btn.textContent = originalText;
+      alert('Something went wrong sending your enquiry. Please try again or contact us directly via WhatsApp or phone.');
+    }
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = originalText;
+    alert('Something went wrong sending your enquiry. Please try again or contact us directly via WhatsApp or phone.');
+  });
+}
+</script>
+<script>
+// -- IMAGE LIGHTBOX --
+(function(){
+  var lb = document.getElementById('bgLightbox');
+  var lbImg = document.getElementById('bgLightboxImg');
+  var lbCaption = document.getElementById('bgLightboxCaption');
+  var lbClose = document.getElementById('bgLightboxClose');
+
+  function openLightbox(img){
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt || '';
+    lbCaption.textContent = img.alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  document.addEventListener('click', function(e){
+    var img = e.target.closest('img.lightbox-trigger');
+    if(img){ openLightbox(img); }
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', function(e){ if(e.target === lb){ closeLightbox(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && lb.classList.contains('open')){ closeLightbox(); } });
+})();
+</script>
+</body>
+</html>
